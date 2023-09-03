@@ -7,3 +7,7 @@ class Question(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField(max_length=5000)
     created_at = models.DateTimeField(default=timezone.now)
+
+
+class Answer (models.Model):
+    question = models.ForeignKey(Question, related_name='answer_qeustion', on_delete=models.CASCADE)
