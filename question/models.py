@@ -9,7 +9,7 @@ class Question(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 
-def __str__(self) -> str:
+    def __str__(self) -> str:
         return self.title
 
 
@@ -21,5 +21,5 @@ class Answer (models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 
-def __str__(self) -> str:
+    def __str__(self) -> str:
         return str(self.question)
