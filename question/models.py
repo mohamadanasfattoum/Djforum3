@@ -10,4 +10,7 @@ class Question(models.Model):
 
 
 class Answer (models.Model):
+    user = models.ForeignKey(User,related_name='answe_user',on_delete=models.CASCADE)
     question = models.ForeignKey(Question, related_name='answer_qeustion', on_delete=models.CASCADE)
+    
+
