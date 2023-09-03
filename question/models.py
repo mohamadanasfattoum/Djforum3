@@ -9,6 +9,11 @@ class Question(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 
+def __str__(self) -> str:
+        return self.title
+
+
+
 class Answer (models.Model):
     user = models.ForeignKey(User,related_name='answe_user',on_delete=models.CASCADE)
     question = models.ForeignKey(Question, related_name='answer_qeustion', on_delete=models.CASCADE)
