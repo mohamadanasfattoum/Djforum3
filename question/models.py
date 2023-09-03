@@ -19,3 +19,7 @@ class Answer (models.Model):
     question = models.ForeignKey(Question, related_name='answer_qeustion', on_delete=models.CASCADE)
     answer = models.TextField(max_length=3000)
     created_at = models.DateTimeField(default=timezone.now)
+
+
+def __str__(self) -> str:
+        return str(self.question)
