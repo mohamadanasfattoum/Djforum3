@@ -17,8 +17,9 @@ def question_detail(request,question_id):
 
 
 def add_question(request):
-    form = QuestionForm()
-    return render(request, 'add_question.html',{'form':form})
+    if request.method=='POST':
+        form = QuestionForm(request.POST,request.FILES)
+        return render(request, 'add_question.html',{'form':form})
 
 
 
