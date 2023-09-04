@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from .models import Question
 from .forms import QuestionForm
 
@@ -19,7 +19,17 @@ def question_detail(request,question_id):
 def add_question(request):
     if request.method=='POST':
         form = QuestionForm(request.POST,request.FILES)
-        return render(request, 'add_question.html',{'form':form})
+        if form.is_valid():
+            form.save()
+            return redirect(f'/question/')
+        
+    else:
+        form = QuestionForm()
+
+
+
+
+    return render(request, 'add_question.html',{'form':form})
 
 
 
