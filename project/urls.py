@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from question.views import question_list , question_detail
+from question.views import question_list , question_detail, add_question
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('question/',question_list),
+    path('question/add/',add_question),
     path('question/<int:question_id>/',question_detail),
+
+
 ]
