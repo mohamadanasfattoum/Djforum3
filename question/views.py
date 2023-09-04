@@ -17,7 +17,7 @@ def question_detail(request,question_id):
 
 
 def add_question(request):
-    form = QuestionForm.objects.get(id=question_id)
+    form = QuestionForm()
     return render(request, 'add_question.html',{'form':form})
 
 
