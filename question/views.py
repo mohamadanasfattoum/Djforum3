@@ -5,7 +5,8 @@ from .models import Question
 
 
 def question_list(request):
-
+    data = Question.objects.all()
+    
 
 
 
