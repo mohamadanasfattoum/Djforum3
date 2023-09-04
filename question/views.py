@@ -4,10 +4,36 @@ from .models import Question
 
 
 
+def question_list(request):
 
 
 
-def add_question(request):
-    pass 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#def add_question(request):
+    
 
 
