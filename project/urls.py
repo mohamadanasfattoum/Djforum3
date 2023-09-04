@@ -21,5 +21,5 @@ from question.views import question_list , question_detail
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('question/',question_list),
-    path('question/<int: question_id>/',question_detail),
+    path('question/<int:question_id>/',question_detail),
 ]
