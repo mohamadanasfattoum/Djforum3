@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
 from .models import Question
+from .forms import QuestionForm
 
 
 
@@ -15,6 +15,8 @@ def question_detail(request,question_id):
     data = Question.objects.get(id=question_id)
     return render(request, 'question_detail.html',{'question':data})
 
+
+def add_question(request):
 
 
 
