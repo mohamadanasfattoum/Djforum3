@@ -32,13 +32,13 @@ def add_question(request):
 def edit_question(request,question_id):
     data = Question.objects.get(id=question_id)
     if request.method=='POST':
-        form = QuestionForm(request.POST,request.FILES)
+        form = QuestionForm(request.POST,request.FILES,instance=data)
         if form.is_valid():
             form.save()
             return redirect(f'/question/')
         
     else:
-        form = QuestionForm()
+        form = QuestionForm(instance=data)
 
     return render(request, 'edit_question.html',{'form':form})
 
