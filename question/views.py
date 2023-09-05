@@ -43,7 +43,10 @@ def edit_question(request,question_id):
     return render(request, 'edit_question.html',{'form':form})
 
 
-
+def question_detete(request,question_id):
+    data = Question.objects.get(id=question_id)
+    data.delete()
+    return redirect(f'/question/')
 
 
 
