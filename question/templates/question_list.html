@@ -3,5 +3,5 @@
 <a href="/question/add/">Add new Question</a>
 <hr>
 {% for question in question %}
-    {{question}}
+    <li><a href="/question/{{question.id}}/">{{question}}</a></li>
 {% endfor %}
